@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{{ user.username }}</h1>
+    <div class="account_header">
+        <p>Мои заявки: {{ num_orders }}</p>
+        <a href="{% url 'order-creation' %}">+ Создание заявки</a>
+    </div>
+    <div class="order_list">
+        {% if order_list %}
+            {% for order in order_list %}
+                <div class="order">
+                    <h2>Название: {{ order.order_name }}</h2>
+                    <p>Описание: {{ order.disc }}</p>
+                    <p>Время заказа:{{ order.date_joined }}</p>
+                    <p>Категория:{{ order.category }}</p>
+                    <p>Статус:{{ order.status }}</p>
+                    <img alt="" src="{{ order.order_img }}">
+                </div>
+            {% endfor %}
+        {% else %}
+            <h2>Вы не сделали ни одного заказа</h2>
+        {% endif %}
+    </div>
+    <a href="{% url 'profile_delete' %}">Удалить аккаунт</a>
+{% endblock %}

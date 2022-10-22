@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+    {% block scss %}
+        {% load static %}
+        <link rel="stylesheet" href="{% static '/style/css.css' %}">
+        <link rel="stylesheet" href="{% static '/style/order_create.css' %}">
+    {% endblock %}
+{% block content %}
+    <h1>Создание заявки</h1>
+    <form action="{% url 'order-creation' %}" method="post">
+         {{form}}
+    {% csrf_token %}
+    <button type="submit">Создать заявку</button>
+    </form>
+{% endblock %}

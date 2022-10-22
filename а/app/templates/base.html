@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Design-board</title>
+    {% block scss %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/style/css.css' %}">
+    {% endblock %}
+</head>
+<body>
+<div class="container">
+    <nav>
+        <a href="{% url 'home'%}">Главная</a>
+        {%if user.is_authenticated %}
+            <div class="nav-r">
+                <a class="user-link" href="{% url 'my-account' %}">Аккаунт: {{user}}</a>
+                <a href="{% url 'logout'%}">Выход</a>
+            </div>
+        {% else %}
+            <div class="nav-r">
+                <a href="{% url 'login'%}">Вход</a>
+                <a href="{% url 'registration'%}">Регистрация</a>
+            </div>
+        {% endif %}
+    </nav>
+{% block content %}
+{% endblock %}
+</div>
+</body>
+</html>

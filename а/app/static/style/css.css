@@ -1,0 +1,40 @@
+body {
+    background-color: #e4f4ff;
+    display: flex;
+    justify-content: center;
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    font-style: normal;
+}
+* > a {
+    text-decoration: none;
+    color: black;
+}
+
+.container {
+    width: 750px;
+}
+a:hover {
+    color: #55a1ef;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.user-link {
+    color: #55a1ef;
+}
+
+.nav-r {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.nav-r:last-child>:last-child {
+    border: 2px solid #55a1ef;
+    padding: 10px;
+    border-radius: 7px;
+}
